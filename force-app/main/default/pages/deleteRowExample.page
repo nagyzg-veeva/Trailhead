@@ -1,0 +1,29 @@
+<apex:page controller="deleteRowsExample" action="{!onloadmethod}" lightningStyleSheets="true">
+<apex:form >
+<apex:pageBlock >
+    <apex:commandbutton value="Add Contact" action="{!addContact}" immediate="true"/>
+    <apex:commandButton value="Save Changes" action="{!saveChanges}"/>
+  <!-- Display some account information -->  
+  <apex:pageBlockSection columns="1">
+      <apex:outputField value="{!accountRec.Name}"/>
+      <apex:outputField value="{!accountRec.OwnerId}"/>
+  </apex:pageBlockSection>
+  
+  <!-- Display the related contacts for the Account -->
+  <apex:pageblocktable value="{!Contacts}" var="con"> <apex:variable value="{!0}" var="cnt"/>
+      <apex:column headervalue="Action">
+          <apex:commandlink value="Remove" action="{!removeContact}" immediate="true">
+              <!-- Pass the row number to the controller so that we know which row to remove -->
+              <apex:param name="index" value="{!cnt}"/>
+          </apex:commandlink> 
+          <apex:variable var="cnt" value="{!cnt+1}"/>              
+      </apex:column>  
+      <apex:column headerValue="Last Name">
+          <apex:inputfield value="{!con.LastName}"/>
+      </apex:column>     
+  </apex:pageblocktable>
+  
+</apex:pageBlock> 
+    
+    </apex:form>
+</apex:page>

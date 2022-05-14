@@ -1,0 +1,27 @@
+<apex:page standardController="Customer_Satisfaction_Interview__c">
+
+<h3>Customer Satisfaction Interview</h3>
+<hr/>
+<div>
+    <apex:pageBlock title="Information">
+        
+        <p><strong>Account Name:</strong> {!Customer_Satisfaction_Interview__c.Account__r.name}</p>
+        <p><strong>Contact Name:</strong> {!Customer_Satisfaction_Interview__c.Contact__r.FirstName} {!Customer_Satisfaction_Interview__c.Contact__r.LastName}</p>
+        <p><strong>Questionnaire:</strong> {!Customer_Satisfaction_Interview__c.Questionnaire__r.name}</p>
+           
+    </apex:pageBlock>
+
+    <apex:form > 
+        <apex:pageBlock title="Customer Satisfaction Interview">
+            <div style="width: 30%; float:left;"><strong>Contact: </strong></div><apex:inputField id="Questionnaire__c" value="{!Customer_Satisfaction_Interview__c.Contact__c}"/> <p/>
+            <div style="width: 30%; float:left;"><strong>Date of Submission: </strong></div><apex:inputField value="{!Customer_Satisfaction_Interview__c.Date_of_Submission__c}"/> <p/>
+            <div style="width: 30%; float:left;">{!Customer_Satisfaction_Interview__c.Question_1__c}: </div><apex:inputField value="{!Customer_Satisfaction_Interview__c.Answer_1__c}"/> <p/>
+            <div style="width: 30%; float:left;">{!Customer_Satisfaction_Interview__c.Question_2__c}: </div><apex:inputField value="{!Customer_Satisfaction_Interview__c.Answer_2__c}"/> <p/>
+            <div style="width: 30%; float:left;">{!Customer_Satisfaction_Interview__c.Question_3__c}: </div><apex:inputField value="{!Customer_Satisfaction_Interview__c.Answer_3__c}"/> <p/>
+            <div style="width: 30%; float:left;">{!Customer_Satisfaction_Interview__c.Question_4__c}: </div><apex:inputField value="{!Customer_Satisfaction_Interview__c.Answer_4__c}"/> <p/>
+            <div style="width: 30%; float:left;">{!Customer_Satisfaction_Interview__c.Question_5__c}: </div><apex:inputField value="{!Customer_Satisfaction_Interview__c.Answer_5__c}"/> <p/>
+            <apex:commandButton action="{!save}" value="Save"/> 
+        </apex:pageBlock>
+    </apex:form> 
+</div>
+</apex:page>

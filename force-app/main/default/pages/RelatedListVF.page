@@ -1,0 +1,15 @@
+<apex:page standardController="Account">
+
+    <apex:pageBlock >
+        You are looking for some related list for {!account.name}:
+    </apex:pageBlock>
+
+    <apex:relatedList list="Opportunities"/>
+
+    <apex:relatedList list="Contacts">
+        <apex:facet name="header">Titles can be overwritten with facets</apex:facet>
+    </apex:relatedList>
+
+    <apex:relatedList list="Cases" title="Or you can keep the image, but change the text"/>
+
+</apex:page>
