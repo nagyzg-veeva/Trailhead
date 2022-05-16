@@ -1,0 +1,4 @@
+Id myId = Id.valueOf('0010O00002OWQDLQA5');
+Schema.SObjectType sobjectType = myId.getSObjectType();
+System.debug(sobjectType.getDescribe().getName());
+
